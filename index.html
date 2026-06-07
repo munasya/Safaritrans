@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Trans - Travel Aman, Nyaman, Terpercaya</title>
+    <meta name="description" content="Safari Trans melayani perjalanan Tegal, Pemalang, Brebes, Yogyakarta, Jakarta, Lampung dan berbagai kota lainnya dengan harga bersahabat.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        navy: '#0a192f',
+                        royal: '#1d4ed8',
+                        emerald: '#059669',
+                        gold: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations & Scrollbar -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1d4ed8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0a192f; }
+
+        /* Scroll Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Floating WA Animation */
+        @keyframes bounce-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-bounce-soft { animation: bounce-soft 2s infinite ease-in-out; }
+
+        /* Hero Overlay Gradient */
+        .hero-gradient { background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(29, 78, 216, 0.6)); }
+
+        /* Masonry Grid */
+        .masonry { column-count: 1; column-gap: 1rem; }
+        @media (min-width: 640px) { .masonry { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+
+        /* Hide elements on load before Alpine/JS mounts if needed */
+        .js-hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden selection:bg-gold selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div id="logo-text" class="text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2 select-none">
+                <i class="fa-solid fa-route text-gold"></i>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 drop-shadow-md">Safari Trans</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#beranda" class="hover:text-gold transition">Beranda</a>
+                <a href="#tentang" class="hover:text-gold transition">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-gold transition">Layanan</a>
+                <a href="#armada" class="hover:text-gold transition">Armada</a>
+                <a href="#galeri" class="hover:text-gold transition">Galeri</a>
+                <a href="#kontak" class="hover:text-gold transition">Kontak</a>
+                <a href="#kontak" class="bg-gold hover:bg-yellow-600 text-navy px-5 py-2 rounded-full font-bold shadow-lg transition transform hover:scale-105">Pesan</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-navy/95 backdrop-blur-md text-white border-t border-gray-700">
+            <div class="flex flex-col px-4 py-6 space-y-4 text-center text-lg">
+                <a href="#beranda" class="mobile-link">Beranda</a>
+                <a href="#tentang" class="mobile-link">Tentang Kami</a>
+                <a href="#layanan" class="mobile-link">Layanan</a>
+                <a href="#armada" class="mobile-link">Armada</a>
+                <a href="#galeri" class="mobile-link">Galeri</a>
+                <a href="#kontak" class="mobile-link">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Dynamic Background Images will be set via JS -->
+        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-1000 transform scale-105" style="background-image: url('https://i.postimg.cc/KYPdbfnW/IMG-20260607-111558.png?q=80&w=2021&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto reveal">
+            <span class="inline-block py-1 px-3 rounded-full bg-emerald text-white text-sm font-semibold mb-4 tracking-wider uppercase shadow-md">Premium Travel Service</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+                Safari Trans – Travel <span class="text-gold">Aman, Nyaman, Terpercaya</span> & Harga Bersahabat
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light drop-shadow-md">
+                Melayani perjalanan Tegal, Pemalang, Brebes, Yogyakarta, Jakarta, Lampung dan berbagai kota lainnya.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a id="btn-booking-hero" href="#" target="_blank" class="bg-emerald hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-emerald/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Booking Sekarang
+                </a>
+                <a href="#kontak" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA PILIH KAMI -->
+    <section class="py-16 bg-white relative -mt-10 z-20 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="reveal p-4 rounded-2xl hover:bg-blue-50 transition duration-300">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-royal rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"><i class="fa-solid fa-car"></i></div>
+                    <h3 class="font-bold text-navy">Armada Lengkap</h3>
+                </div>
+                <div class="reveal p-4 rounded-2xl hover:bg-blue-50 transition duration-300 delay-100">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-royal rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3 class="font-bold text-navy">Sopir Berpengalaman</h3>
+                </div>
+                <div class="reveal p-4 rounded-2xl hover:bg-blue-50 transition duration-300 delay-200">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-royal rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="font-bold text-navy">Tepat Waktu</h3>
+                </div>
+                <div class="reveal p-4 rounded-2xl hover:bg-blue-50 transition duration-300 delay-300">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-royal rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"><i class="fa-solid fa-wallet"></i></div>
+                    <h3 class="font-bold text-navy">Harga Bersahabat</h3>
+                </div>
+                <div class="reveal p-4 rounded-2xl hover:bg-blue-50 transition duration-300 delay-400 col-span-2 md:col-span-1">
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-royal rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"><i class="fa-solid fa-headset"></i></div>
+                    <h3 class="font-bold text-navy">Layanan 24 Jam</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gold rounded-3xl transform translate-x-4 translate-y-4"></div>
+                        <img src="https://i.postimg.cc/L8ZJxFmL/IMG-20260607-124113.png?q=80&w=2069&auto=format&fit=crop" alt="Tentang Safari Trans" loading="lazy" class="relative rounded-3xl shadow-xl w-full h-[400px] object-cover">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-royal">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl text-royal"><i class="fa-solid fa-award"></i></div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-navy">3+ Tahun</h4>
+                                    <p class="text-sm text-gray-500 font-medium">Pengalaman Terpercaya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal delay-200">
+                    <h4 class="text-royal font-bold tracking-wider uppercase mb-2">Tentang Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Mitra Perjalanan Terbaik Anda di Setiap Rute</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Safari Trans telah melayani pelanggan lebih dari 3 tahun dengan komitmen penuh memberikan perjalanan yang aman, nyaman, terpercaya, dan tentu saja dengan harga yang bersahabat untuk semua kalangan.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Kepercayaan Anda adalah prioritas utama kami. Dengan armada yang terawat sempurna dan tim profesional, kami memastikan setiap perjalanan Anda menjadi pengalaman yang menyenangkan.
+                    </p>
+                    <a href="#layanan" class="inline-flex items-center gap-2 text-royal font-bold hover:text-navy transition">
+                        Pelajari Layanan Kami <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan" class="py-20 bg-navy text-white relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-royal rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-gold font-bold tracking-wider uppercase mb-2">Layanan Kami</h4>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Transportasi Profesional & Fleksibel</h2>
+                <p class="text-gray-300 text-lg">Berbagai layanan transportasi profesional untuk kebutuhan perjalanan pribadi, keluarga, rombongan, wisata, hingga perjalanan bisnis dengan pelayanan terbaik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Layanan Item -->
+                <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 bg-gradient-to-br from-royal to-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Travel Antar Kota</h3>
+                    <p class="text-gray-300 leading-relaxed">Melayani perjalanan antar kota dengan aman, nyaman, dan tepat waktu. Pilihan rute luas dengan jadwal yang fleksibel.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2 reveal delay-100">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald to-green-400 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Carter Mobil</h3>
+                    <p class="text-gray-300 leading-relaxed">Solusi transportasi fleksibel untuk kebutuhan pribadi, keluarga, maupun bisnis. Armada siap pakai 24/7.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2 reveal delay-200">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold to-yellow-400 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Antar Jemput Bandara</h3>
+                    <p class="text-gray-300 leading-relaxed">Layanan antar jemput bandara yang praktis, nyaman, dan terpercaya. Anti repot dan dijamin tidak telat.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2 reveal delay-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Wisata & Tour</h3>
+                    <p class="text-gray-300 leading-relaxed">Menyediakan perjalanan wisata ke berbagai destinasi populer dengan pelayanan dan panduan terbaik.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-3xl hover:bg-white/20 transition duration-300 transform hover:-translate-y-2 reveal delay-400 lg:col-span-2">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-400 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Ziarah</h3>
+                    <p class="text-gray-300 leading-relaxed">Melayani perjalanan ziarah rombongan maupun keluarga dengan armada yang nyaman, terorganisir, dan penuh khidmat untuk pengalaman religius Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTIK (Animated Counter) -->
+    <section class="py-16 bg-gold relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-navy">
+                <div class="reveal">
+                    <div class="text-4xl md:text-6xl font-extrabold mb-2"><span class="counter" data-target="3">0</span>+</div>
+                    <div class="font-bold text-lg">Tahun Pengalaman</div>
+                </div>
+                <div class="reveal delay-100">
+                    <div class="text-4xl md:text-6xl font-extrabold mb-2"><span class="counter" data-target="1000">0</span>+</div>
+                    <div class="font-bold text-lg">Pelanggan Setia</div>
+                </div>
+                <div class="reveal delay-200">
+                    <div class="text-4xl md:text-6xl font-extrabold mb-2"><span class="counter" data-target="50">0</span>+</div>
+                    <div class="font-bold text-lg">Rute Perjalanan</div>
+                </div>
+                <div class="reveal delay-300">
+                    <div class="text-4xl md:text-6xl font-extrabold mb-2"><span class="counter" data-target="95">0</span>%</div>
+                    <div class="font-bold text-lg">Kepuasan Pelanggan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARMADA -->
+    <section id="armada" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-royal font-bold tracking-wider uppercase mb-2">Armada Terbaik</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Pilihan Armada Nyaman & Terawat</h2>
+                <p class="text-gray-600 text-lg">Armada kami selalu dalam kondisi prima, bersih, terawat, dan siap menemani perjalanan Anda dengan keamanan serta pelayanan terbaik.</p>
+            </div>
+
+            <!-- Dynamic Armada Container -->
+            <div id="armada-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Data will be loaded from DB or fallback here -->
+                <div class="col-span-full text-center text-gray-500 py-10" id="armada-loading">Memuat data armada...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RUTE POPULER -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-emerald font-bold tracking-wider uppercase mb-2">Destinasi Utama</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Rute Perjalanan Populer</h2>
+                <p class="text-gray-600 text-lg">Pilihan rute perjalanan favorit yang sering digunakan pelanggan setia Safari Trans setiap harinya.</p>
+            </div>
+
+            <!-- Tags for common routes to boost SEO visually -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Tegal</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Brebes</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Pemalang</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Cirebon</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Pekalongan</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Semarang</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Jabodetabek</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Jawa</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Sumatera</span>
+                <span class="px-4 py-2 bg-blue-50 text-royal rounded-full font-medium text-sm">Bali</span>
+            </div>
+
+            <div id="rute-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                 <div class="col-span-full text-center text-gray-500 py-10" id="rute-loading">Memuat rute perjalanan...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-gold font-bold tracking-wider uppercase mb-2">Dokumentasi</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Galeri Perjalanan Kami</h2>
+                <p class="text-gray-600 text-lg">Momen-momen perjalanan aman dan nyaman bersama pelanggan Safari Trans.</p>
+            </div>
+
+            <!-- Masonry Grid for Gallery -->
+            <div id="galeri-container" class="masonry reveal">
+                <div class="col-span-full text-center text-gray-500 py-10" id="galeri-loading">Memuat galeri...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="py-20 bg-navy text-white relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/connected.png')]"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-gold font-bold tracking-wider uppercase mb-2">Ulasan Pelanggan</h4>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Apa Kata Mereka Tentang Kami?</h2>
+            </div>
+
+            <!-- Vertical Testimonials -->
+            <div class="space-y-6">
+                <!-- Testi 1 -->
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 reveal hover:bg-white/20 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg text-gold">Budi Santoso</h4>
+                            <p class="text-sm text-gray-300"><i class="fa-solid fa-location-dot mr-1"></i> Semarang, Jawa Tengah</p>
+                        </div>
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic">"Pelayanan sangat memuaskan! Sopir ramah dan sangat menguasai rute. Perjalanan dari Tegal ke Jakarta terasa sangat cepat dan nyaman. Sangat direkomendasikan untuk perjalanan bisnis maupun keluarga."</p>
+                </div>
+                <!-- Testi 2 -->
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 reveal delay-100 hover:bg-white/20 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg text-gold">Siti Aminah</h4>
+                            <p class="text-sm text-gray-300"><i class="fa-solid fa-location-dot mr-1"></i> Pemalang, Jawa Tengah</p>
+                        </div>
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic">"Harga bersahabat tapi kualitas layanannya premium. AC dingin, kabin bersih, dan penjemputan sangat on time. Terima kasih Safari Trans atas pengalaman perjalanan yang menyenangkan!"</p>
+                </div>
+                <!-- Testi 3 -->
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 reveal delay-200 hover:bg-white/20 transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg text-gold">Agus Pratama</h4>
+                            <p class="text-sm text-gray-300"><i class="fa-solid fa-location-dot mr-1"></i> Brebes, Jawa Tengah</p>
+                        </div>
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic">"Baru pertama kali coba carter mobil untuk ziarah keluarga, dan adminnya sangat responsif. Perjalanan lancar tanpa kendala. Pasti akan langganan terus untuk agenda rombongan selanjutnya."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKASI & KONTAK -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Google Maps -->
+                <div class="reveal rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[400px] md:h-[500px] relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7678443720756!2d109.31703800000003!3d-6.918334600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fc5b903a62a2b%3A0x12af2271f855b7dd!2sSafari%20trans!5e0!3m2!1sid!2sid!4v1780572772771!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 text-center">
+                        <a href="https://maps.app.goo.gl/BTDykFA2RSsW6sBVA" target="_blank" class="inline-block bg-white text-royal hover:bg-gray-100 font-bold px-6 py-3 rounded-xl shadow-lg transition">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i> Lihat Lokasi di Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kontak Info -->
+                <div class="reveal delay-200">
+                    <h4 class="text-royal font-bold tracking-wider uppercase mb-2">Hubungi Kami</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Siap Melayani Perjalanan Anda 24 Jam</h2>
+                    <p class="text-gray-600 text-lg mb-8">Jangan ragu untuk menghubungi kami untuk pemesanan, informasi rute, atau penawaran harga terbaik. Admin kami selalu siap membantu.</p>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-royal rounded-full flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-lg">Alamat Kantor</h4>
+                                <p class="text-gray-600">SAFARI TRANS Dk Pengasinan RT.02/RW.07, Pengasinan, Sukareja, Kecamatan Warureja, Kabupaten Tegal, Jawa Tengah 52183</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-50 text-emerald rounded-full flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy text-lg">WhatsApp / Telepon</h4>
+                                <p class="text-gray-600 font-medium text-lg" id="display-wa-number">+62 831-1606-6847</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a id="btn-booking-besar" href="#" target="_blank" class="block w-full bg-emerald hover:bg-green-600 text-white text-center px-8 py-5 rounded-2xl font-bold text-xl shadow-xl shadow-emerald/20 transition transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-2xl mr-2 align-middle"></i> Booking Sekarang via WhatsApp
+                    </a>
+
+                    <!-- Social Media Links Dynamic -->
+                    <div class="mt-10">
+                        <h4 class="font-bold text-navy mb-4">Ikuti Kami</h4>
+                        <div id="sosmed-container" class="flex gap-4">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CLEAN -->
+    <footer class="bg-navy py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <!-- Kosong dan bersih sesuai permintaan -->
+        </div>
+    </footer>
+
+    <!-- STICKY FLOATING WHATSAPP -->
+    <a id="floating-wa" href="#" target="_blank" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-emerald text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 animate-bounce-soft hover:bg-green-600 transition duration-300">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="admin-modal" class="hidden fixed inset-0 z-[100] bg-navy/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative transform transition-all">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="text-center mb-8">
+                <div class="w-16 h-16 bg-navy text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-navy">Admin Access</h2>
+                <p class="text-gray-500 text-sm">System Management Safari Trans</p>
+            </div>
+            <form id="login-form" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                    <input type="text" id="admin-user" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-royal focus:border-royal outline-none transition" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="admin-pass" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-royal focus:border-royal outline-none transition" required>
+                </div>
+                <div id="login-error" class="text-red-500 text-sm hidden text-center">Username atau Password salah!</div>
+                <button type="submit" class="w-full bg-navy hover:bg-blue-900 text-white py-3 rounded-xl font-bold transition">
+                    Login Dashboard
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD FULLSCREEN -->
+    <div id="dashboard-view" class="hidden fixed inset-0 z-[110] bg-gray-100 flex flex-col overflow-hidden">
+        <!-- Header -->
+        <div class="bg-navy text-white px-6 py-4 flex justify-between items-center shadow-md">
+            <div class="font-bold text-xl flex items-center gap-2">
+                <i class="fa-solid fa-gear text-gold"></i> Dashboard Admin
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm bg-blue-800 px-3 py-1 rounded-full"><i class="fa-solid fa-circle text-green-400 text-xs mr-1"></i> Online</span>
+                <button onclick="logoutAdmin()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-sm font-bold transition">Logout</button>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+            <!-- Sidebar / Tabs Menu -->
+            <div class="w-full md:w-64 bg-white border-r border-gray-200 overflow-y-auto">
+                <div class="p-4">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Menu Kelola</p>
+                    <nav class="space-y-1" id="admin-tabs">
+                        <button data-tab="tab-hero" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium bg-blue-50 text-royal transition"><i class="fa-solid fa-image w-6 text-center"></i> Hero Banner</button>
+                        <button data-tab="tab-kontak" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition"><i class="fa-solid fa-phone w-6 text-center"></i> Kontak WA</button>
+                        <button data-tab="tab-armada" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition"><i class="fa-solid fa-car w-6 text-center"></i> Armada</button>
+                        <button data-tab="tab-galeri" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition"><i class="fa-solid fa-camera w-6 text-center"></i> Galeri Foto</button>
+                        <button data-tab="tab-rute" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition"><i class="fa-solid fa-map w-6 text-center"></i> Rute Populer</button>
+                        <button data-tab="tab-sosmed" class="tab-btn w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition"><i class="fa-solid fa-hashtag w-6 text-center"></i> Sosial Media</button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 bg-gray-50 relative">
+                
+                <!-- Loading Indicator -->
+                <div id="admin-loading" class="hidden absolute inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center">
+                    <i class="fa-solid fa-circle-notch fa-spin text-4xl text-royal mb-2"></i>
+                    <p class="text-navy font-medium">Menyimpan data...</p>
+                </div>
+
+                <!-- TAB: HERO -->
+                <div id="tab-hero" class="tab-content">
+                    <h2 class="text-2xl font-bold text-navy mb-6">Kelola Hero Banner</h2>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 max-w-2xl">
+                        <form id="form-hero" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Banner Utama (URL Link atau Upload)</label>
+                                <div class="flex gap-2 mb-2">
+                                    <input type="url" id="hero-img1-url" placeholder="https://..." class="flex-1 px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none">
+                                </div>
+                                <p class="text-xs text-gray-500 mb-1">Atau upload dari HP/Komputer (Gambar otomatis dikompres agar web cepat):</p>
+                                <input type="file" id="hero-img1-file" accept="image/*" class="w-full text-sm">
+                                <img id="hero-img1-preview" class="mt-2 h-32 object-cover rounded-lg hidden">
+                            </div>
+                            <button type="submit" class="bg-navy text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-blue-900">Simpan Banner</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- TAB: KONTAK -->
+                <div id="tab-kontak" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-navy mb-6">Kelola Kontak & Pesan WA</h2>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 max-w-2xl">
+                        <form id="form-kontak" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp (Gunakan kode negara, contoh: 6283116066847)</label>
+                                <input type="text" id="wa-number" class="w-full px-4 py-2 border rounded-lg focus:border-royal outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Pesan Otomatis</label>
+                                <textarea id="wa-message" rows="3" class="w-full px-4 py-2 border rounded-lg focus:border-royal outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="bg-navy text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-blue-900">Simpan Kontak</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- TAB: ARMADA -->
+                <div id="tab-armada" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-navy">Kelola Armada</h2>
+                        <button onclick="openFormModal('armada')" class="bg-emerald hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md"><i class="fa-solid fa-plus mr-1"></i> Tambah Armada</button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                            <input type="text" id="search-armada" placeholder="Cari armada..." class="px-4 py-2 border rounded-lg text-sm w-full max-w-xs focus:border-royal outline-none" onkeyup="filterTable('armada')">
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm text-gray-600">
+                                <thead class="bg-gray-50 text-gray-700 uppercase">
+                                    <tr>
+                                        <th class="px-6 py-3">Foto</th>
+                                        <th class="px-6 py-3">Nama Armada</th>
+                                        <th class="px-6 py-3">Kapasitas</th>
+                                        <th class="px-6 py-3 text-right">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-armada">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: GALERI -->
+                <div id="tab-galeri" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-navy">Kelola Galeri</h2>
+                        <button onclick="openFormModal('galeri')" class="bg-emerald hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md"><i class="fa-solid fa-plus mr-1"></i> Tambah Foto</button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="admin-galeri-grid">
+                        <!-- Dynamic Grid Admin -->
+                    </div>
+                </div>
+
+                <!-- TAB: RUTE -->
+                <div id="tab-rute" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-navy">Kelola Rute Populer</h2>
+                        <button onclick="openFormModal('rute')" class="bg-emerald hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md"><i class="fa-solid fa-plus mr-1"></i> Tambah Rute</button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm text-gray-600">
+                                <thead class="bg-gray-50 text-gray-700 uppercase">
+                                    <tr>
+                                        <th class="px-6 py-3">Foto</th>
+                                        <th class="px-6 py-3">Kota Tujuan</th>
+                                        <th class="px-6 py-3">Deskripsi Singkat</th>
+                                        <th class="px-6 py-3 text-right">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-rute">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: SOSMED -->
+                <div id="tab-sosmed" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-navy">Kelola Sosial Media</h2>
+                        <button onclick="openFormModal('sosmed')" class="bg-emerald hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md"><i class="fa-solid fa-plus mr-1"></i> Tambah Sosmed</button>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="bg-gray-50 text-gray-700 uppercase">
+                                <tr>
+                                    <th class="px-6 py-3">Platform</th>
+                                    <th class="px-6 py-3">Link URL</th>
+                                    <th class="px-6 py-3 text-right">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-sosmed">
+                                <!-- Dynamic Rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- REUSABLE FORM MODAL FOR CRUD -->
+    <div id="crud-modal" class="hidden fixed inset-0 z-[120] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg text-navy" id="crud-modal-title">Form</h3>
+                <button onclick="closeCrudModal()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <form id="crud-form" class="space-y-4">
+                    <input type="hidden" id="crud-id">
+                    <input type="hidden" id="crud-type">
+                    
+                    <div id="field-image" class="hidden space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Gambar (URL atau Upload File)</label>
+                        <input type="url" id="crud-img-url" placeholder="https://..." class="w-full px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none mb-2">
+                        <input type="file" id="crud-img-file" accept="image/*" class="w-full text-sm">
+                        <img id="crud-img-preview" class="mt-2 h-32 object-cover rounded-lg hidden">
+                    </div>
+
+                    <div id="field-name" class="hidden space-y-1">
+                        <label class="block text-sm font-medium text-gray-700" id="label-name">Nama/Judul</label>
+                        <input type="text" id="crud-name" class="w-full px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none">
+                    </div>
+
+                    <div id="field-desc" class="hidden space-y-1">
+                        <label class="block text-sm font-medium text-gray-700" id="label-desc">Deskripsi/Fasilitas</label>
+                        <textarea id="crud-desc" rows="3" class="w-full px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none"></textarea>
+                    </div>
+
+                    <div id="field-capacity" class="hidden space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Kapasitas Penumpang</label>
+                        <input type="text" id="crud-capacity" placeholder="Contoh: 14 Kursi" class="w-full px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none">
+                    </div>
+
+                    <div id="field-icon" class="hidden space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Class Icon FontAwesome</label>
+                        <input type="text" id="crud-icon" placeholder="Contoh: fa-brands fa-instagram" class="w-full px-4 py-2 border rounded-lg text-sm focus:border-royal outline-none">
+                        <p class="text-xs text-gray-400">Referensi: fontawesome.com</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-100 flex justify-end gap-2">
+                        <button type="button" onclick="closeCrudModal()" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 hover:bg-gray-200">Batal</button>
+                        <button type="submit" class="px-4 py-2 rounded-lg text-sm font-bold text-white bg-emerald hover:bg-green-600 shadow-md">Simpan Data</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC & FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, getDocs, setDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // ==========================================
+        // KONFIGURASI FIREBASE (GANTI UNTUK PRODUKSI)
+        // ==========================================
+        let firebaseConfig = null;
+        let appId = 'safaritrans'; // Default fallback
+        let isCanvasEnv = false;
+
+        // Check environment variables (Canvas Preview Logic)
+        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+            firebaseConfig = JSON.parse(__firebase_config);
+            isCanvasEnv = true;
+            appId = typeof __app_id !== 'undefined' ? __app_id : appId;
+        } else {
+            // =========================================================
+            // TEMPEL KODE CONFIG FIREBASE ANDA DISINI (UNTUK BLOGGER)
+            // =========================================================
+            firebaseConfig = {
+                 apiKey: "AIzaSyDC93JNB3bJEppvoJfeZ9uL4yLNtK04JK8",
+                 authDomain: "safaritrans-web.firebaseapp.com",
+                 projectId: "safaritrans-web",
+                 storageBucket: "safaritrans-web.firebasestorage.app",
+                 messagingSenderId: "135980954053",
+                 appId: "1:135980954053:web:533cee96725253a8019bac"
+            };
+        }
+
+        // Initialize Firebase
+        const app = Object.keys(firebaseConfig).length > 0 ? initializeApp(firebaseConfig) : null;
+        const auth = app ? getAuth(app) : null;
+        const db = app ? getFirestore(app) : null;
+
+        // Global State & Data
+        let currentUser = null;
+        let globalData = {
+            waNumber: '6283116066847',
+            waMessage: 'Halo Safari Trans, saya ingin melakukan pemesanan travel.',
+            heroImg: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop'
+        };
+
+        // UI Helpers
+        const showAdminLoading = () => document.getElementById('admin-loading').classList.remove('hidden');
+        const hideAdminLoading = () => document.getElementById('admin-loading').classList.add('hidden');
+
+        // Path Helper (Rule 1 Canvas or Standard)
+        const getCollectionPath = (colName) => {
+            if (isCanvasEnv) {
+                return collection(db, 'artifacts', appId, 'public', 'data', colName);
+            } else {
+                return collection(db, colName); // Default standard firebase root collection for Blogger
+            }
+        };
+        const getDocPath = (colName, docId) => {
+            if (isCanvasEnv) {
+                return doc(db, 'artifacts', appId, 'public', 'data', colName, docId);
+            } else {
+                return doc(db, colName, docId);
+            }
+        };
+
+        // ==========================================
+        // AUTHENTICATION LOGIC (Rule 3)
+        // ==========================================
+        const initAuth = async () => {
+            if (!auth) return;
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Auth error:", error);
+            }
+        };
+
+        if (app) {
+            initAuth();
+            onAuthStateChanged(auth, (user) => {
+                currentUser = user;
+                if (user) {
+                    setupRealtimeListeners();
+                }
+            });
+        }
+
+        // ==========================================
+        // FRONTEND LOGIC & ANIMATIONS
+        // ==========================================
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-navy', 'shadow-lg', 'py-2');
+                nav.classList.remove('bg-transparent', 'py-4');
+            } else {
+                nav.classList.remove('bg-navy', 'shadow-lg', 'py-2');
+                nav.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, revealOptions);
+        revealElements.forEach(el => revealOnScroll.observe(el));
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    let count = 0;
+                    const increment = target / 50; 
+                    const updateCount = () => {
+                        count += increment;
+                        if(count < target) {
+                            entry.target.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 40);
+                        } else {
+                            entry.target.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // Update WhatsApp Links dynamically
+        const updateWALinks = () => {
+            const link = `https://wa.me/${globalData.waNumber}?text=${encodeURIComponent(globalData.waMessage)}`;
+            document.getElementById('floating-wa').href = link;
+            document.getElementById('btn-booking-hero').href = link;
+            document.getElementById('btn-booking-besar').href = link;
+            document.getElementById('display-wa-number').innerText = `+${globalData.waNumber}`;
+        };
+
+        // ==========================================
+        // REALTIME DATABASE LISTENERS & RENDER
+        // ==========================================
+        function setupRealtimeListeners() {
+            if (!db || !currentUser) return;
+
+            // Hero & Contact Settings (Single Doc pattern)
+            onSnapshot(getDocPath('settings', 'main'), (docSnap) => {
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if(data.heroImg) {
+                        globalData.heroImg = data.heroImg;
+                        document.getElementById('hero-bg').style.backgroundImage = `url('${data.heroImg}')`;
+                    }
+                    if(data.waNumber) globalData.waNumber = data.waNumber;
+                    if(data.waMessage) globalData.waMessage = data.waMessage;
+                    updateWALinks();
+
+                    // Fill Admin form if open
+                    document.getElementById('wa-number').value = globalData.waNumber;
+                    document.getElementById('wa-message').value = globalData.waMessage;
+                    document.getElementById('hero-img1-url').value = globalData.heroImg;
+                } else {
+                    updateWALinks(); // fallback
+                }
+            }, (error) => console.log("Listener error", error));
+
+            // Armada
+            onSnapshot(getCollectionPath('armada'), (snapshot) => {
+                const container = document.getElementById('armada-container');
+                const table = document.getElementById('table-armada');
+                container.innerHTML = ''; table.innerHTML = '';
+                
+                if (snapshot.empty) {
+                    container.innerHTML = `<div class="col-span-full text-center text-gray-500 py-10">Belum ada armada yang ditambahkan.</div>`;
+                    return;
+                }
+
+                snapshot.forEach(doc => {
+                    const d = doc.data();
+                    const id = doc.id;
+                    const imgUrl = d.img || 'https://via.placeholder.com/400x250?text=Mobil';
+                    
+                    // Public UI
+                    container.innerHTML += `
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300 group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="${imgUrl}" alt="${d.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-navy shadow">
+                                    <i class="fa-solid fa-users text-royal mr-1"></i> ${d.capacity}
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-navy mb-3">${d.name}</h3>
+                                <p class="text-gray-600 text-sm mb-6 min-h-[40px]"><i class="fa-solid fa-check-circle text-emerald mr-1"></i> ${d.facilities}</p>
+                                <a href="https://wa.me/${globalData.waNumber}?text=${encodeURIComponent('Halo, saya ingin pesan armada ' + d.name)}" target="_blank" class="block w-full text-center bg-emerald hover:bg-green-600 text-white py-3 rounded-xl font-bold transition shadow-md">
+                                    <i class="fa-brands fa-whatsapp mr-1"></i> Pesan Sekarang
+                                </a>
+                            </div>
+                        </div>
+                    `;
+
+                    // Admin UI
+                    table.innerHTML += `
+                        <tr class="border-b border-gray-50 hover:bg-gray-50">
+                            <td class="px-6 py-4"><img src="${imgUrl}" class="w-16 h-12 object-cover rounded shadow-sm"></td>
+                            <td class="px-6 py-4 font-bold search-item">${d.name}</td>
+                            <td class="px-6 py-4">${d.capacity}</td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="deleteData('armada', '${id}')" class="text-red-500 hover:bg-red-50 p-2 rounded"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }, (err) => console.log(err));
+
+            // Galeri
+            onSnapshot(getCollectionPath('galeri'), (snapshot) => {
+                const container = document.getElementById('galeri-container');
+                const adminGrid = document.getElementById('admin-galeri-grid');
+                container.innerHTML = ''; adminGrid.innerHTML = '';
+
+                if (snapshot.empty) {
+                    container.innerHTML = `<div class="col-span-full text-center text-gray-500 py-10">Belum ada foto galeri.</div>`;
+                    return;
+                }
+
+                snapshot.forEach(doc => {
+                    const id = doc.id;
+                    const url = doc.data().img;
+                    
+                    container.innerHTML += `
+                        <div class="masonry-item rounded-2xl overflow-hidden group cursor-pointer relative shadow-md hover:shadow-xl transition">
+                            <img src="${url}" loading="lazy" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <i class="fa-solid fa-expand text-white text-3xl"></i>
+                            </div>
+                        </div>
+                    `;
+
+                    adminGrid.innerHTML += `
+                        <div class="relative rounded-lg overflow-hidden border">
+                            <img src="${url}" class="w-full h-32 object-cover">
+                            <button onclick="deleteData('galeri', '${id}')" class="absolute top-2 right-2 bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-600 shadow-md"><i class="fa-solid fa-trash text-xs"></i></button>
+                        </div>
+                    `;
+                });
+            }, err => console.log(err));
+
+            // Rute
+            onSnapshot(getCollectionPath('rute'), (snapshot) => {
+                const container = document.getElementById('rute-container');
+                const table = document.getElementById('table-rute');
+                container.innerHTML = ''; table.innerHTML = '';
+
+                if(snapshot.empty) {
+                    container.innerHTML = `<div class="col-span-full text-center text-gray-500 py-10">Belum ada rute khusus yang ditambahkan.</div>`;
+                    return;
+                }
+
+                snapshot.forEach(doc => {
+                    const d = doc.data();
+                    const id = doc.id;
+                    const imgUrl = d.img || 'https://via.placeholder.com/300x200?text=Rute';
+                    
+                    container.innerHTML += `
+                        <div class="bg-gray-50 rounded-2xl overflow-hidden group hover:shadow-lg transition">
+                            <img src="${imgUrl}" class="w-full h-40 object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="p-5">
+                                <h4 class="font-bold text-lg text-navy mb-1">${d.name}</h4>
+                                <p class="text-sm text-gray-500 line-clamp-2">${d.desc}</p>
+                            </div>
+                        </div>
+                    `;
+
+                    table.innerHTML += `
+                        <tr class="border-b border-gray-50 hover:bg-gray-50">
+                            <td class="px-6 py-4"><img src="${imgUrl}" class="w-12 h-12 object-cover rounded shadow-sm"></td>
+                            <td class="px-6 py-4 font-bold">${d.name}</td>
+                            <td class="px-6 py-4 truncate max-w-[150px]">${d.desc}</td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="deleteData('rute', '${id}')" class="text-red-500 hover:bg-red-50 p-2 rounded"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }, err => console.log(err));
+
+            // Sosmed
+            onSnapshot(getCollectionPath('sosmed'), (snapshot) => {
+                const container = document.getElementById('sosmed-container');
+                const table = document.getElementById('table-sosmed');
+                container.innerHTML = ''; table.innerHTML = '';
+
+                snapshot.forEach(doc => {
+                    const d = doc.data();
+                    const id = doc.id;
+                    
+                    container.innerHTML += `
+                        <a href="${d.url}" target="_blank" class="w-12 h-12 bg-gray-100 hover:bg-royal hover:text-white text-navy rounded-full flex items-center justify-center text-xl transition transform hover:scale-110 shadow-sm">
+                            <i class="${d.icon}"></i>
+                        </a>
+                    `;
+
+                    table.innerHTML += `
+                        <tr class="border-b border-gray-50">
+                            <td class="px-6 py-4"><i class="${d.icon} text-lg mr-2"></i> ${d.name}</td>
+                            <td class="px-6 py-4"><a href="${d.url}" target="_blank" class="text-blue-500 hover:underline">Link</a></td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="deleteData('sosmed', '${id}')" class="text-red-500 hover:bg-red-50 p-2 rounded"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }, err => console.log(err));
+        }
+
+        // ==========================================
+        // ADMIN UTILITIES & SECRET LOGIN
+        // ==========================================
+        let clickCount = 0;
+        let clickTimer;
+        document.getElementById('logo-text').addEventListener('click', () => {
+            clickCount++;
+            clearTimeout(clickTimer);
+            if (clickCount === 5) {
+                document.getElementById('admin-modal').classList.remove('hidden');
+                clickCount = 0;
+            }
+            clickTimer = setTimeout(() => { clickCount = 0; }, 2000);
+        });
+
+        window.closeAdminModal = () => {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('login-error').classList.add('hidden');
+            document.getElementById('login-form').reset();
+        };
+
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const u = document.getElementById('admin-user').value;
+            const p = document.getElementById('admin-pass').value;
+            if (u === 'masbahlilganteng' && p === 'lovebahlil') {
+                closeAdminModal();
+                document.getElementById('dashboard-view').classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // prevent bg scroll
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        });
+
+        window.logoutAdmin = () => {
+            document.getElementById('dashboard-view').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        // Tabs Logic
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // reset styling
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('bg-blue-50', 'text-royal');
+                    b.classList.add('text-gray-600');
+                });
+                // active style
+                btn.classList.add('bg-blue-50', 'text-royal');
+                btn.classList.remove('text-gray-600');
+                
+                // toggle content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(btn.getAttribute('data-tab')).classList.remove('hidden');
+            });
+        });
+
+        // Image Resizer (Client Side Compression to Base64)
+        // Needed because Firestore docs have 1MB limit. We resize to max 800px width.
+        const resizeImageFile = (file) => {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        const MAX = 800;
+
+                        if (width > height) {
+                            if (width > MAX) { height *= MAX / width; width = MAX; }
+                        } else {
+                            if (height > MAX) { width *= MAX / height; height = MAX; }
+                        }
+                        
+                        canvas.width = width; canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', 0.7)); // 70% quality JPEG
+                    };
+                };
+            });
+        };
+
+        // Live Preview for specific inputs
+        document.getElementById('hero-img1-file').addEventListener('change', async function() {
+            if(this.files && this.files[0]) {
+                const base64 = await resizeImageFile(this.files[0]);
+                const prev = document.getElementById('hero-img1-preview');
+                prev.src = base64;
+                prev.classList.remove('hidden');
+                document.getElementById('hero-img1-url').value = base64; // Set to url input
+            }
+        });
+
+        document.getElementById('crud-img-file').addEventListener('change', async function() {
+            if(this.files && this.files[0]) {
+                const base64 = await resizeImageFile(this.files[0]);
+                const prev = document.getElementById('crud-img-preview');
+                prev.src = base64;
+                prev.classList.remove('hidden');
+                document.getElementById('crud-img-url').value = base64;
+            }
+        });
+
+        // ==========================================
+        // CRUD OPERATIONS
+        // ==========================================
+
+        // Settings Save (Hero & Kontak)
+        document.getElementById('form-hero').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if(!db) return alert('Database tidak terhubung');
+            showAdminLoading();
+            try {
+                await setDoc(getDocPath('settings', 'main'), {
+                    heroImg: document.getElementById('hero-img1-url').value
+                }, { merge: true });
+                alert("Banner berhasil disimpan");
+            } catch(err) { console.error(err); alert("Gagal menyimpan"); }
+            hideAdminLoading();
+        });
+
+        document.getElementById('form-kontak').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if(!db) return;
+            showAdminLoading();
+            try {
+                await setDoc(getDocPath('settings', 'main'), {
+                    waNumber: document.getElementById('wa-number').value,
+                    waMessage: document.getElementById('wa-message').value
+                }, { merge: true });
+                alert("Kontak WA berhasil disimpan");
+            } catch(err) { console.error(err); alert("Gagal"); }
+            hideAdminLoading();
+        });
+
+        // Dynamic Form Modal
+        window.openFormModal = (type) => {
+            document.getElementById('crud-form').reset();
+            document.getElementById('crud-type').value = type;
+            document.getElementById('crud-img-preview').classList.add('hidden');
+            
+            // Hide all fields first
+            ['image', 'name', 'desc', 'capacity', 'icon'].forEach(f => document.getElementById(`field-${f}`).classList.add('hidden'));
+
+            let title = "";
+            if (type === 'armada') {
+                title = "Tambah Armada";
+                ['image', 'name', 'desc', 'capacity'].forEach(f => document.getElementById(`field-${f}`).classList.remove('hidden'));
+                document.getElementById('label-name').innerText = "Nama Armada";
+                document.getElementById('label-desc').innerText = "Fasilitas (Pisahkan dgn koma)";
+            } else if (type === 'galeri') {
+                title = "Tambah Foto Galeri";
+                document.getElementById('field-image').classList.remove('hidden');
+            } else if (type === 'rute') {
+                title = "Tambah Rute Populer";
+                ['image', 'name', 'desc'].forEach(f => document.getElementById(`field-${f}`).classList.remove('hidden'));
+                document.getElementById('label-name').innerText = "Kota Tujuan";
+                document.getElementById('label-desc').innerText = "Deskripsi Singkat";
+            } else if (type === 'sosmed') {
+                title = "Tambah Sosial Media";
+                ['name', 'image', 'icon'].forEach(f => document.getElementById(`field-${f}`).classList.remove('hidden'));
+                document.getElementById('label-name').innerText = "Nama Platform (Instagram, dll)";
+                document.getElementById('crud-img-url').placeholder = "Masukkan Link URL Profil";
+                document.getElementById('crud-img-url').previousElementSibling.innerText = "Link URL Tujuan";
+                document.getElementById('crud-img-file').classList.add('hidden'); // Hide file upload for sosmed url
+            }
+
+            document.getElementById('crud-modal-title').innerText = title;
+            document.getElementById('crud-modal').classList.remove('hidden');
+        };
+
+        window.closeCrudModal = () => {
+            document.getElementById('crud-modal').classList.add('hidden');
+            document.getElementById('crud-img-file').classList.remove('hidden'); // reset
+        };
+
+        // Save Data
+        document.getElementById('crud-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if(!db) return;
+            const type = document.getElementById('crud-type').value;
+            const newDocId = Date.now().toString(); // simple ID
+
+            const data = {};
+            if (type === 'armada') {
+                data.img = document.getElementById('crud-img-url').value;
+                data.name = document.getElementById('crud-name').value;
+                data.facilities = document.getElementById('crud-desc').value;
+                data.capacity = document.getElementById('crud-capacity').value;
+            } else if (type === 'galeri') {
+                data.img = document.getElementById('crud-img-url').value;
+                if(!data.img) return alert("Gambar wajib diisi!");
+            } else if (type === 'rute') {
+                data.img = document.getElementById('crud-img-url').value;
+                data.name = document.getElementById('crud-name').value;
+                data.desc = document.getElementById('crud-desc').value;
+            } else if (type === 'sosmed') {
+                data.name = document.getElementById('crud-name').value;
+                data.url = document.getElementById('crud-img-url').value;
+                data.icon = document.getElementById('crud-icon').value || "fa-solid fa-link";
+            }
+
+            showAdminLoading();
+            try {
+                await setDoc(getDocPath(type, newDocId), data);
+                closeCrudModal();
+            } catch(err) {
+                console.error(err);
+                alert("Gagal menyimpan data.");
+            }
+            hideAdminLoading();
+        });
+
+        // Delete Data
+        window.deleteData = async (colName, id) => {
+            if(!confirm("Yakin ingin menghapus data ini?")) return;
+            if(!db) return;
+            showAdminLoading();
+            try {
+                await deleteDoc(getDocPath(colName, id));
+            } catch(err) { console.error(err); alert("Gagal menghapus"); }
+            hideAdminLoading();
+        };
+
+        // Simple Search Table Filter
+        window.filterTable = (type) => {
+            const input = document.getElementById(`search-${type}`).value.toLowerCase();
+            const rows = document.querySelectorAll(`#table-${type} tr`);
+            rows.forEach(row => {
+                const text = row.querySelector('.search-item').innerText.toLowerCase();
+                row.style.display = text.includes(input) ? '' : 'none';
+            });
+        };
+
+    </script>
+</body>
+</html>
